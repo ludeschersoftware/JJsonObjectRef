@@ -1,0 +1,23 @@
+{
+    "name": "@ludeschersoftware/json-object-ref",
+    "version": "1.0.0",
+    "description": "Resolve absolute and relative references inside JSON-like objects",
+    "main": "index.js",
+    "type": "commonjs",
+    "keywords": [
+        "json",
+        "ref",
+        "reference",
+        "config",
+        "resolver"
+    ],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://gitea.sv1.home/ludescher/JJsonObjectRef.git"
+    },
+    "author": "Johannes Ludescher",
+    "license": "MIT"
+}
