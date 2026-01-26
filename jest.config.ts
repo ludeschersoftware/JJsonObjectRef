@@ -13,7 +13,7 @@ const config: Config = {
     },
     moduleFileExtensions: ["ts", "tsx", "js"],
     testMatch: ["**/*.test.ts"],
-    roots: [".", "./tests"],
+    roots: ["./src", "./tests"],
     clearMocks: true
 };
 

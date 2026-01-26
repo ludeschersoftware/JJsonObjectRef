@@ -1,21 +1,25 @@
-function getByPath(obj, path) {
-    return path.reduce((a, k) => a?.[k], obj);
+export function getByPath(obj: JsonValue, path: JsonPath): JsonValue | undefined {
+    return path.reduce<JsonValue | undefined>(
+        (acc, key) =>
+            acc && typeof acc === 'object'
+                ? (acc as any)[key]
+                : undefined,
+        obj
+    );
 }
 
-function parseFallback(fallback) {
+export function parseFallback(
+    fallback?: string
+): JsonValue | undefined {
     if (!fallback) return undefined;
     try { return JSON.parse(fallback); }
     catch { return fallback; }
 }
 
-function clone(value) {
-    return typeof structuredClone === 'function'
-        ? structuredClone(value)
-        : JSON.parse(JSON.stringify(value));
-}
+export function clone<T extends JsonValue>(value: T): T {
+    if (typeof globalThis.structuredClone === 'function') {
+        return globalThis.structuredClone(value);
+    }
 
-module.exports = {
-    getByPath,
-    parseFallback,
-    clone
-};
+    return JSON.parse(JSON.stringify(value));
+}

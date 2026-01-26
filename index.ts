@@ -1,0 +1,1 @@
+export { resolveRefs } from './src/Resolver';

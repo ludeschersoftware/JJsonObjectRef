@@ -1,5 +1,1 @@
-const { resolveRefs } = require('./src/resolver');
-
-module.exports = {
-    resolveRefs
-};
+export { resolveRefs } from './dist/Resolver';
