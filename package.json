@@ -5,8 +5,17 @@
     "publishConfig": {
         "access": "public"
     },
-    "main": "index.js",
-    "type": "commonjs",
+    "type": "module",
+    "main": "./dist/cjs/index.js",
+    "module": "./dist/esm/index.js",
+    "types": "./dist/esm/index.d.ts",
+    "exports": {
+        ".": {
+            "require": "./dist/cjs/index.js",
+            "import": "./dist/esm/index.js",
+            "types": "./dist/esm/index.d.ts"
+        }
+    },
     "keywords": [
         "json",
         "ref",
@@ -15,18 +24,13 @@
         "resolver"
     ],
     "scripts": {
-        "build": "tsc --project tsconfig.json",
+        "build:cjs": "tsc --project tsconfig.commonjs.json",
+        "build:esm": "tsc --project tsconfig.esnext.json",
+        "build": "yarn build:cjs && yarn build:esm",
         "watch": "tsc --watch",
         "test": "jest --passWithNoTests",
         "test:watch": "jest --watch",
         "test:coverage": "jest --coverage"
-    },
-    "types": "index.ts",
-    "exports": {
-        ".": {
-            "import": "./index.js",
-            "types": "./index.ts"
-        }
     },
     "repository": {
         "type": "git",
