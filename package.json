@@ -5,7 +5,6 @@
     "publishConfig": {
         "access": "public"
     },
-    "type": "module",
     "main": "./dist/cjs/Resolver.js",
     "module": "./dist/esm/Resolver.js",
     "types": "./dist/esm/Resolver.d.ts",
