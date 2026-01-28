@@ -18,8 +18,8 @@ describe('relative references', () => {
     it('resolves ./ correctly', () => {
         const obj = {
             a: {
-                value: 5,
                 b: {
+                    value: 5,
                     ref: '@ref:./value'
                 }
             }
